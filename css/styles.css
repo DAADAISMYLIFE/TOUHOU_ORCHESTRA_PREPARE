@@ -5,12 +5,18 @@ body {
     padding: 0;
     background-image: url('https://pbs.twimg.com/media/GKoT1c5agAA4NjA?format=jpg&name=4096x4096');
     background-size: cover;
+    /* 배경 이미지가 화면 전체를 덮도록 조정 */
     background-position: center;
+    /* 배경 이미지의 중심을 화면 중심에 맞춤 */
     background-attachment: fixed;
+    /* 배경 이미지가 화면 스크롤에 고정되도록 설정 */
+    background-repeat: no-repeat;
+    /* 배경 이미지가 반복되지 않도록 설정 */
     color: #fff;
     text-align: center;
     /* 본문 내용 전체를 중앙 정렬 */
 }
+
 
 header {
     background: rgba(0, 0, 0, 0.7);
@@ -76,6 +82,10 @@ main {
     /* 배경 색상 */
 }
 
+.superbig {
+    max-width: 150px;
+}
+
 .big {
     max-width: 200px;
     /* 첫 번째 보스 이미지 크기 */
@@ -136,12 +146,17 @@ iframe {
 
 
 /* iframe을 감싸는 div 설정 */
+/* 기본적인 responsive-video 설정 */
 .responsive-video {
     position: relative;
     padding-top: 56.25%;
     /* 16:9 비율 (9 / 16 = 0.5625) */
     height: 0;
     overflow: hidden;
+    max-width: 100%;
+    /* 부모 요소의 너비를 넘지 않도록 설정 */
+    margin: 0 auto;
+    /* 가운데 정렬 */
 }
 
 .responsive-video iframe {
@@ -152,7 +167,14 @@ iframe {
     height: 100%;
 }
 
-/* 미디어 쿼리 추가 */
+/* 데스크탑 화면을 위한 미디어 쿼리 */
+@media screen and (min-width: 1024px) {
+    .responsive-video {
+        max-width: 50%;
+        /* 화면 너비의 80%로 제한 */
+    }
+}
+
 /* 768px 이하의 화면 크기(태블릿 및 모바일)에서 적용 */
 @media screen and (max-width: 768px) {
     body {
