@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://pbs.twimg.com/media/GKoT1c5agAA4NjA?format=jpg&name=4096x4096');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    /* 본문 내용 전체를 중앙 정렬 */
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+
+main {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+    /* 메인 콘텐츠를 중앙 정렬 */
+}
+
+.series-link {
+    text-align: center;
+}
+
+.series-link div a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background: #555;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.series-link div a:hover {
+    background: #666;
+}
+
+.series-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.boss-image {
+    display: block;
+    margin: 0 auto 20px auto;
+    /* 중앙 정렬 및 아래 여백 추가 */
+    height: auto;
+    /* 비율에 맞춰 높이 자동 조절 */
+}
+
+.stage {
+    margin: 20px 0;
+    /* 위와 아래에 20px의 여백 추가 */
+    padding: 20px;
+    /* 내부 여백 추가 */
+    border-radius: 10px;
+    /* 모서리 둥글게 */
+    background: rgba(0, 0, 0, 0.5);
+    /* 배경 색상 */
+}
+
+.big {
+    max-width: 200px;
+    /* 첫 번째 보스 이미지 크기 */
+}
+
+.medium {
+    max-width: 280px;
+    /* 두 번째 보스 이미지 크기 */
+}
+
+.small {
+    max-width: 350px;
+    /* 세 번째 보스 이미지 크기 */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+iframe {
+    margin: 20px 0;
+    /* iframe 위와 아래에 여백 추가 */
+}
+
+/* 노래 제목 스타일 정의 */
+.recommand {
+    color: yellow;
+    /* 노란색 */
+    font-weight: bold;
+    /* 굵게 */
+}
