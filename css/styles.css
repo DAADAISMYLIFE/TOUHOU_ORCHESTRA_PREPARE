@@ -9,14 +9,17 @@ body {
     background-position: center;
     /* 배경 이미지의 중심을 화면 중심에 맞춤 */
     background-attachment: fixed;
-    /* 배경 이미지가 화면 스크롤에 고정되도록 설정 */
+    /* 배경 이미지 고정 */
     background-repeat: no-repeat;
-    /* 배경 이미지가 반복되지 않도록 설정 */
+    /* 배경 이미지 반복 안 함 */
+    background-color: black;
+    /* 여백 부분 채우기 */
     color: #fff;
     text-align: center;
+    font-size: 1vw;
+    /* 화면 너비의 2%에 해당하는 글자 크기 */
     /* 본문 내용 전체를 중앙 정렬 */
 }
-
 
 header {
     background: rgba(0, 0, 0, 0.7);
@@ -101,6 +104,7 @@ main {
     /* 세 번째 보스 이미지 크기 */
 }
 
+
 footer {
     text-align: center;
     padding: 10px;
@@ -126,6 +130,13 @@ iframe {
     /* 굵게 */
 }
 
+.s_recommand {
+    color: #FF3F9F;
+    /* 노란색 */
+    font-weight: bold;
+    /* 굵게 */
+}
+
 img {
     width: 100%;
     max-width: 100%;
@@ -135,26 +146,25 @@ img {
     margin-right: auto;
 }
 
-/* 기본 스타일 정의 */
 iframe {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    /* 가운데 정렬 */
 }
 
-
 /* iframe을 감싸는 div 설정 */
-/* 기본적인 responsive-video 설정 */
 .responsive-video {
     position: relative;
     padding-top: 56.25%;
-    /* 16:9 비율 (9 / 16 = 0.5625) */
-    height: 0;
+    /* 16:9 비율 */
+    width: 100%;
+    /* 너비를 100%로 설정 */
+    max-height: 500px;
+    /* 최대 높이를 설정 */
     overflow: hidden;
-    max-width: 100%;
-    /* 부모 요소의 너비를 넘지 않도록 설정 */
+    /* 넘치는 부분 숨기기 */
     margin: 0 auto;
     /* 가운데 정렬 */
 }
@@ -170,8 +180,14 @@ iframe {
 /* 데스크탑 화면을 위한 미디어 쿼리 */
 @media screen and (min-width: 1024px) {
     .responsive-video {
-        max-width: 50%;
-        /* 화면 너비의 80%로 제한 */
+        width: 50%;
+        /* 데스크탑에서 영상 너비를 50%로 설정 */
+        max-width: 600px;
+        /* 최대 너비를 600px로 제한 */
+        max-height: 210px;
+        /* 최대 높이를 210px로 줄임 (300px의 30% 감소) */
+        padding-top: 28.125%;
+        /* 비율을 4:3에서 약간 줄임 (3 / 4 = 0.28125) */
     }
 }
 
@@ -180,6 +196,8 @@ iframe {
     body {
         background-size: cover;
         padding: 10px;
+        font-size: 13px;
+        /* 모바일 화면에서 글자 크기 */
     }
 
     header,
@@ -204,7 +222,8 @@ iframe {
 /* 480px 이하의 화면 크기(모바일)에서 적용 */
 @media screen and (max-width: 480px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 18px;
+        /* 데스크탑 화면에서 글자 크기 */
     }
 
     .series-title {
