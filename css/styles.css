@@ -3,44 +3,30 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-image: url('https://pbs.twimg.com/media/GKoT1c5agAA4NjA?format=jpg&name=4096x4096');
-    background-size: cover;
-    /* 배경 이미지가 화면 전체를 덮도록 조정 */
-    background-position: center;
-    /* 배경 이미지의 중심을 화면 중심에 맞춤 */
-    background-attachment: fixed;
-    /* 배경 이미지 고정 */
-    background-repeat: no-repeat;
-    /* 배경 이미지 반복 안 함 */
+    background: url('https://pbs.twimg.com/media/GKoT1c5agAA4NjA?format=jpg&name=4096x4096') center/cover fixed no-repeat;
     background-color: black;
-    /* 여백 부분 채우기 */
     color: #fff;
     text-align: center;
     font-size: 1vw;
-    /* 화면 너비의 2%에 해당하는 글자 크기 */
-    /* 본문 내용 전체를 중앙 정렬 */
 }
 
-header {
+header, footer {
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    border-radius: 10px;
 }
 
 header h1 {
     margin: 0;
 }
 
-
-
 main {
     padding: 20px;
     background: rgba(0, 0, 0, 0.6);
     margin: 20px;
     border-radius: 10px;
-    text-align: center;
-    /* 메인 콘텐츠를 중앙 정렬 */
 }
 
 .series-link {
@@ -55,6 +41,7 @@ main {
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .series-link div a:hover {
@@ -68,105 +55,51 @@ main {
 
 .boss-image {
     display: block;
-    margin: 0 auto 20px auto;
-    /* 중앙 정렬 및 아래 여백 추가 */
+    margin: 0 auto 20px;
     height: auto;
-    /* 비율에 맞춰 높이 자동 조절 */
 }
 
 .stage {
     margin: 20px 0;
-    /* 위와 아래에 20px의 여백 추가 */
     padding: 20px;
-    /* 내부 여백 추가 */
     border-radius: 10px;
-    /* 모서리 둥글게 */
     background: rgba(0, 0, 0, 0.5);
-    /* 배경 색상 */
 }
 
-.superbig {
-    max-width: 150px;
-}
-
-.big {
-    max-width: 200px;
-    /* 첫 번째 보스 이미지 크기 */
-}
-
-.medium {
-    max-width: 280px;
-    /* 두 번째 보스 이미지 크기 */
-}
-
-.small {
-    max-width: 350px;
-    /* 세 번째 보스 이미지 크기 */
-}
-
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
-}
+.superbig { max-width: 150px; }
+.big { max-width: 200px; }
+.medium { max-width: 280px; }
+.small { max-width: 350px; }
 
 iframe {
     margin: 20px 0;
-    /* iframe 위와 아래에 여백 추가 */
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* 노래 제목 스타일 정의 */
-.recommand {
-    color: yellow;
-    /* 노란색 */
+.recommand, .s_recommand {
     font-weight: bold;
-    /* 굵게 */
 }
 
-.s_recommand {
-    color: #FF3F9F;
-    /* 노란색 */
-    font-weight: bold;
-    /* 굵게 */
-}
+.recommand { color: yellow; }
+.s_recommand { color: #FF3F9F; }
 
 img {
     width: 100%;
     max-width: 100%;
     height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-iframe {
-    max-width: 100%;
-    height: auto;
-    display: block;
     margin: 0 auto;
-    /* 가운데 정렬 */
 }
 
-/* iframe을 감싸는 div 설정 */
 .responsive-video {
     position: relative;
     padding-top: 56.25%;
-    /* 16:9 비율 */
     width: 100%;
-    /* 너비를 100%로 설정 */
     max-height: 500px;
-    /* 최대 높이를 설정 */
     overflow: hidden;
-    /* 넘치는 부분 숨기기 */
     margin: 0 auto;
-    /* 가운데 정렬 */
 }
 
 .responsive-video iframe {
@@ -177,32 +110,22 @@ iframe {
     height: 100%;
 }
 
-/* 데스크탑 화면을 위한 미디어 쿼리 */
 @media screen and (min-width: 1024px) {
     .responsive-video {
         width: 50%;
-        /* 데스크탑에서 영상 너비를 50%로 설정 */
         max-width: 600px;
-        /* 최대 너비를 600px로 제한 */
         max-height: 210px;
-        /* 최대 높이를 210px로 줄임 (300px의 30% 감소) */
         padding-top: 28.125%;
-        /* 비율을 4:3에서 약간 줄임 (3 / 4 = 0.28125) */
     }
 }
 
-/* 768px 이하의 화면 크기(태블릿 및 모바일)에서 적용 */
 @media screen and (max-width: 768px) {
     body {
-        background-size: cover;
         padding: 10px;
         font-size: 13px;
-        /* 모바일 화면에서 글자 크기 */
     }
 
-    header,
-    main,
-    footer {
+    header, main, footer {
         padding: 15px;
         margin: 0;
     }
@@ -212,18 +135,11 @@ iframe {
         margin: 10px auto;
         width: 100%;
     }
-
-    .series-image {
-        max-width: 100%;
-        height: auto;
-    }
 }
 
-/* 480px 이하의 화면 크기(모바일)에서 적용 */
 @media screen and (max-width: 480px) {
     header h1 {
         font-size: 18px;
-        /* 데스크탑 화면에서 글자 크기 */
     }
 
     .series-title {
